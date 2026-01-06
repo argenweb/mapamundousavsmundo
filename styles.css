@@ -40,3 +40,16 @@ html, body {
 .popup-sources a {
   font-size: 0.85em;
 }
+
+#chart-container {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  width: 260px;
+  height: 260px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  z-index: 1000;
+}

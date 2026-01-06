@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
       fecha: "1954-06-18",
       lat: 14.6349,
       lng: -90.5069,
+        continente: "América central",
       tipo: "Golpe de Estado",
       resumen: "Derrocamiento del presidente Jacobo Árbenz con apoyo de la CIA.",
       fuentes: [
@@ -31,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
       fecha: "1973-09-11",
       lat: -33.4489,
       lng: -70.6693,
+        continente: "América del Sur",
       tipo: "Golpe de Estado",
       resumen: "Intervención política y económica contra el gobierno de Salvador Allende.",
       fuentes: [
@@ -231,3 +233,62 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 200);
 
 });
+
+/* ============================
+   GRÁFICO POR CONTINENTE
+   ============================ */
+
+function calcularIntervencionesPorContinente(eventos) {
+  const conteo = {};
+
+  eventos.forEach(evt => {
+    if (!evt.continente) return;
+    conteo[evt.continente] = (conteo[evt.continente] || 0) + 1;
+  });
+
+  return conteo;
+}
+
+const conteoContinentes = calcularIntervencionesPorContinente(eventos);
+
+const labels = Object.keys(conteoContinentes);
+const dataValues = Object.values(conteoContinentes);
+
+const total = dataValues.reduce((a, b) => a + b, 0);
+
+const ctx = document.getElementById("continentChart").getContext("2d");
+
+new Chart(ctx, {
+  type: "pie",
+  data: {
+    labels: labels.map((label, i) => {
+      const porcentaje = ((dataValues[i] / total) * 100).toFixed(1);
+      return `${label} (${dataValues[i]} – ${porcentaje}%)`;
+    }),
+    datasets: [{
+      data: dataValues
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "bottom",
+        labels: {
+          boxWidth: 12,
+          font: { size: 11 }
+        }
+      },
+      tooltip: {
+        callbacks: {
+          label: function(context) {
+            const value = context.raw;
+            const percent = ((value / total) * 100).toFixed(1);
+            return `${value} intervenciones (${percent}%)`;
+          }
+        }
+      }
+    }
+  }
+});
+
