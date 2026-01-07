@@ -6,50 +6,45 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  overflow: hidden;
 }
 
 #app {
-  height: 100vh;       /* CRÍTICO */
+  height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
 }
 
 #timeline {
-  height: 120px;
+  height: 150px; /* Un poco más de espacio para los eventos */
   flex-shrink: 0;
   border-bottom: 1px solid #ccc;
   background: #f5f5f5;
 }
 
 #map {
-  flex-grow: 1;        /* CRÍTICO */
+  flex-grow: 1;
   width: 100%;
-}
-
-/* Popup */
-.popup-title {
-  font-weight: bold;
-}
-
-.popup-meta {
-  font-size: 0.85em;
-  color: #555;
-}
-
-.popup-sources a {
-  font-size: 0.85em;
 }
 
 #chart-container {
   position: fixed;
-  bottom: 12px;
-  right: 12px;
-  width: 260px;
-  height: 260px;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid #ccc;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 8px;
-  padding: 8px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
   z-index: 1000;
+}
+
+#disclaimer {
+  font-size: 12px;
+  padding: 5px;
+  background: #eee;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
 }

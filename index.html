@@ -5,45 +5,36 @@
   <title>Intervenciones de EE.UU. en el Mundo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Leaflet -->
-  <link rel="stylesheet"
-        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
-  </script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-  <!-- Timeline -->
-  <link rel="stylesheet"
-        href="https://unpkg.com/vis-timeline@7.7.3/dist/vis-timeline-graph2d.min.css">
-  <script
-    src="https://unpkg.com/vis-timeline@7.7.3/dist/vis-timeline-graph2d.min.js">
-  </script>
+  <link rel="stylesheet" href="https://unpkg.com/vis-timeline@7.7.3/dist/vis-timeline-graph2d.min.css">
+  <script src="https://unpkg.com/vis-timeline@7.7.3/dist/vis-timeline-graph2d.min.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
   <div id="app">
-      <div id="disclaimer">
-          <strong>Aviso:</strong>
-          Este sitio es un proyecto meramente informativo y educativo.
+    <div id="disclaimer">
+      <strong>Aviso:</strong> Este sitio es un proyecto meramente informativo y educativo.
           No tiene fines económicos, políticos ni religiosos.
           Su único objetivo es facilitar la visualización de información histórica
           disponible públicamente a partir de fuentes libres y abiertas en la web.
           El contenido no representa opiniones ni juicios de valor del autor.
-      </div>
-
-    <div id="timeline"></div>
-    <div id="map"></div>
-      <div id="chart-container">
-        <canvas id="continentChart"></canvas>
     </div>
+    
+    <div id="timeline"></div>
 
+    <div id="map"></div>
+
+    <div id="chart-container">
+      <canvas id="continentChart"></canvas>
+    </div>
   </div>
 
   <script src="script.js"></script>
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
