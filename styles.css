@@ -42,9 +42,9 @@ html, body {
 }
 
 #disclaimer {
-  font-size: 12px;
+  font-size: 14px;
   padding: 5px;
   background: #eee;
-  text-align: center;
+  text-align: justify;
   border-bottom: 1px solid #ddd;
 }
