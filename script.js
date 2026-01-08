@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
         maintainAspectRatio: false,
         plugins: { 
           legend: { display: false }, // Ocultar leyenda para ahorrar espacio
-          title: { display: true, text: 'Eventos por Continente', font: { size: 10 } }
+          title: { display: true, text: 'Eventos por Continente', font: { size: 14 } }
         }
       }
     });
